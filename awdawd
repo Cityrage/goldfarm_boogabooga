@@ -8,6 +8,11 @@ foldFordots.Name = "DotsFolder"
 foldFordots.Parent = game.workspace
 end
 
+_G.MountainClimber = false
+
+
+
+
 local p = game.Players.LocalPlayer.Character
 local speed = 16
 local MountainClimber = 46
@@ -35,6 +40,26 @@ local waypoints = game.workspace:FindFirstChild("DotsFolder"):GetChildren()
 local TweenService = game:GetService("TweenService")
 local tweenInfo = TweenInfo.new(3,Enum.EasingStyle.Linear)
 
+
+local function Mount()
+local player = game.Players.LocalPlayer
+while true do
+    local humanoidWC = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+    if _G.MountainClimber then
+        if humanoidWC and humanoidWC.Health > 0 then
+            humanoidWC.MaxSlopeAngle = 89.9
+        else
+            wait(1)
+        end
+    else
+        if humanoidWC then
+            humanoidWC.MaxSlopeAngle = 46
+        end
+        break
+    end
+        Wait()
+    end
+end
 
 local function reload() --this reloads the player list when called
 
@@ -278,6 +303,17 @@ w3:Slider(
         end)
     end
 ) -- Text, Flag, Minimum, Maximum, Callback, Default (Optional), Flag Location (Optional)
+
+w3:Toggle(
+    "Mountain Climber",
+    "Mount",
+    false,
+    function(Value)
+        _G.MountainClimber = Value
+		Mount()
+    end
+) -- Text, Flag, Enabled, Callback, Flag Location (Optional)
+
 
 
 
