@@ -1,4 +1,4 @@
-local library = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/XDSCRIPTER/CosmicUI/refs/heads/main/scriptUPDATEDDD"))()
+local library = loadstring(game.HttpGet(game, "https://raw.githubusercontent.com/XDSCRIPTER/CosmicUI/refs/heads/main/scriptUPDATEDDDd"))()
 
 
 
