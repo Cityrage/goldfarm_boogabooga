@@ -183,7 +183,7 @@ function a:Window(w)
 
 
     
-    z.Position = UDim2.new(0, 0, 0, 34)
+    z.Position = UDim2.new(0, 0, 0, 50)
     z.Size = UDim2.new(0, 212, 0, 2)
     A.Color =
         ColorSequence.new {
