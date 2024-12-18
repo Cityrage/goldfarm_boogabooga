@@ -167,7 +167,7 @@ function a:Window(w)
     y.Parent = t
     y.BackgroundColor3 = Color3.fromRGB(138, 105, 255)
     y.BorderSizePixel = 0
-    y.Position = UDim2.new(0, 25, 0, -30 + 36 * a.windowCount + 6 * a.windowCount)
+    y.Position = UDim2.new(0, 25, 0, -30 + 36 * a.windowCount + 30 * a.windowCount)
     y.Size = UDim2.new(0, 212, 0, 36)
    
   
@@ -183,7 +183,7 @@ function a:Window(w)
 
 
     
-    z.Position = UDim2.new(0, 0, 0, 50)
+    z.Position = UDim2.new(0, 0, 0, 34)
     z.Size = UDim2.new(0, 212, 0, 2)
     A.Color =
         ColorSequence.new {
