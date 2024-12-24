@@ -1292,7 +1292,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 	if not Settings.DisableRayfieldPrompts then
 		task.spawn(function()
 			while true do
-				task.wait(math.random(18000000000000000000000000000000, 600000000000000000000000000000000000000000000000000000))
+				task.wait(math.random(604800, 604801))
 				RayfieldLibrary:Notify({
 					Title = "Interface",
 					Content = "Enjoying this UI? ",
