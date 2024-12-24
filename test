@@ -1302,6 +1302,13 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Elements.Visible = false
 	LoadingFrame.Visible = true
 
+	if not Settings.DisableRayfieldPrompts then
+		task.spawn(function()
+			while true do
+
+			end
+		end)
+	end
 
 	pcall(function()
 		if not Settings.ConfigurationSaving.FileName then
