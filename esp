@@ -203,20 +203,6 @@ function boxBase:Update()
         local BottomLeft, Vis3 = WorldToViewportPoint(cam, locs.BottomLeft.p)
         local BottomRight, Vis4 = WorldToViewportPoint(cam, locs.BottomRight.p)
 
-        if self.Components.Quad then
-            if Vis1 or Vis2 or Vis3 or Vis4 then
-                self.Components.Quad.Visible = true
-                self.Components.Quad.PointA = Vector2.new(TopRight.X, TopRight.Y)
-                self.Components.Quad.PointB = Vector2.new(TopLeft.X, TopLeft.Y)
-                self.Components.Quad.PointC = Vector2.new(BottomLeft.X, BottomLeft.Y)
-                self.Components.Quad.PointD = Vector2.new(BottomRight.X, BottomRight.Y)
-                self.Components.Quad.Color = color
-            else
-                self.Components.Quad.Visible = false
-            end
-        end
-    else
-        self.Components.Quad.Visible = false
     end
 
     if ESP.Names then
@@ -281,13 +267,6 @@ function ESP:Add(obj, options)
         self:GetBox(obj):Remove()
     end
 
-    box.Components["Quad"] = Draw("Quad", {
-        Thickness = self.Thickness,
-        Color = color,
-        Transparency = 1,
-        Filled = false,
-        Visible = self.Enabled and self.Boxes
-    })
     box.Components["Name"] = Draw("Text", {
 		Text = box.Name,
 		Color = box.Color,
